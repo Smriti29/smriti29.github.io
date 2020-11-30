@@ -25,7 +25,11 @@ $(function() {
     var lockTimer;
   
     $(window).on('scroll', function() {
-  
+    $('nav').css("background-color","#1B242F")  // change the background color to #1B242F when start scrolling
+      if($("nav").offset().top === $('nav').scrollTop()) {
+        $('nav').css("background-color","transparent")
+      }
+      console.log($("nav").offset().top, $("nav").scrollTop())
       var pos = $(window).scrollTop();
       var pos2 = pos + 50;
       var scrollBottom = pos + $(window).height();
