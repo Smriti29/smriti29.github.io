@@ -28,8 +28,13 @@ $(function() {
     $('nav').css("background-color","#1B242F")  // change the background color to #1B242F when start scrolling
       if($("nav").offset().top === $('nav').scrollTop()) {
         $('nav').css("background-color","transparent")
+        void $('#lightning').offsetWidth;         //for restarting the lightning animation when scrolled to top
+        $('#lightning').addClass("lightning")
       }
-      console.log($("nav").offset().top, $("nav").scrollTop())
+      else if($("nav").offset().top != $('nav').scrollTop()) {
+        $('#lightning').removeClass("lightning")
+      }
+      
       var pos = $(window).scrollTop();
       var pos2 = pos + 50;
       var scrollBottom = pos + $(window).height();
